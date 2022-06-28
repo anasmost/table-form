@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lister des Utilisateurs</title>
+  </head>
+  <body>
+    <main>
+      <table aria-label="Table des utilisateurs" aria-colcount="8">
+        <colgroup>
+          <col span="2" />
+          <col id="3" />
+          <col span="4" />
+          <col id="8" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Date de Création</th>
+            <th>Etat</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Nom d'utilisateur</th>
+            <th>Matricule</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template id="table-row">
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <menu type="toolbar">
+                  <li title="supprimer cet utilisateur"><button>🗑</button></li>
+                </menu>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+      <menu type="toolbar">
+        <li title="Ajouter un nouveau utilisateur">
+          <button>Ajouter utilisateur</button>
+        </li>
+      </menu>
+    </main>
+  </body>
+</html>
