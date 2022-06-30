@@ -2,14 +2,14 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const postcssPlugins = [
+  require("precss"),
   require("postcss-preset-env"),
-  require("postcss-nested"),
   require("autoprefixer"),
 ];
 
 module.exports = (env, { mode }) => {
   const cssConfig = {
-    test: /\.(sass|css)$/i,
+    test: /\.(scss|css)$/i,
     use: [
       mode === "development" ? "style-loader" : MiniCssExtractPlugin.loader,
       "css-loader",
@@ -48,7 +48,7 @@ module.exports = (env, { mode }) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "src/index.html",
+        template: "src/template.html",
       }),
     ],
   };

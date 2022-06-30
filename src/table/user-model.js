@@ -1,4 +1,4 @@
-export const ImmutableUsersArray = Object.freeze([
+const DEFAULT_USERS = Object.freeze([
   {
     id: "123456789",
     createdDate: "2021-01-06T00:00:00.000Z",
@@ -28,4 +28,32 @@ export const ImmutableUsersArray = Object.freeze([
   },
 ]);
 
-export default [...ImmutableUsersArray];
+const users = JSON.parse(localStorage.getItem("users")) ?? [...DEFAULT_USERS];
+function storeUsers() {
+  localStorage.setItem("users", JSON.stringify(users));
+}
+
+export function getUsers() {
+  return users;
+}
+export function addUser(user) {
+  users.push(user);
+  storeUsers();
+
+  return users;
+}
+export function deleteUser(userID) {
+  users.forEach((user, i) => {
+    if (user.id === userID) users.splice(i, 1);
+  });
+  storeUsers;
+
+  return users;
+}
+export function resetUsers() {
+  users.splice(0, Infinity);
+  users.push(...DEFAULT_USERS);
+  storeUsers();
+
+  return users;
+}

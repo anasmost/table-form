@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lister des Utilisateurs</title>
+  </head>
+  <body>
+    <main>
+      <table aria-label="Table des utilisateurs" aria-colcount="8">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Date de Création</th>
+            <th>Etat</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Nom d'utilisateur</th>
+            <th>Matricule</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="users">
+          <template>
+            <tr>
+              <td data-id></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <menu type="toolbar">
+                  <li title="supprimer cet utilisateur" class="delete">
+                    <button>🗑</button>
+                  </li>
+                </menu>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+      <menu type="toolbar">
+        <li title="Ajouter un nouveau utilisateur">
+          <button>Ajouter utilisateur</button>
+        </li>
+        <li title="Réinitialiser les utilisateurs">
+          <button type="reset">Réinitialiser</button>
+        </li>
+      </menu>
+    </main>
+    <dialog>
+      <h1>Ajout d'utilisateurs</h1>
+      <form action="">
+        <div class="form-group">
+          <label for="lastName">Nom</label>
+          <input id="lastName" name="lastName" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="firstName">Prénom</label>
+          <input id="firstName" name="firstName" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="status">Etat</label>
+          <input id="status" name="status" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="userName">Nom d'utilisateur</label>
+          <input id="userName" name="userName" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="createdDate">Date de création</label>
+          <input id="createdDate" name="createdDate" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="registrationNumber">Matricule</label>
+          <input
+            id="registrationNumber"
+            name="registrationNumber"
+            type="text"
+          />
+        </div>
+        <input type="submit" value="Enrégistrer" />
+      </form>
+    </dialog>
+  </body>
+</html>
