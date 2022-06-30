@@ -3,9 +3,10 @@ import { createRow, removeRow } from "./user-row";
 
 import "./styles.scss";
 
-export function removeTargetUser(e) {
-  if (e.target.closest(".delete")) {
-    const userRow = e.target.closest("tr");
+export function removeTargetUser(removeTriggerer) {
+  // removeTriggerer must be the trash button or its li parent
+  if (removeTriggerer.closest(".delete")) {
+    const userRow = removeTriggerer.closest("tr");
     deleteUser(userRow.querySelector("td[data-id]").textContent);
     removeRow(userRow);
   }

@@ -6,6 +6,17 @@
   box-sizing: border-box;
 }
 
+body {
+  padding: 2rem;
+}
+
+button {
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 main {
   max-width: 1200px;
   width: max-content;
@@ -20,13 +31,16 @@ main {
     justify-content: space-between;
     flex-direction: row-reverse;
     padding: 10px;
+
+    button {
+      background-color: #fdb64d;
+      font-size: 1.2rem;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
   }
 }
 
 li {
   list-style: none;
-}
-
-button:hover {
-  cursor: pointer;
 }

@@ -2,12 +2,13 @@ table {
   margin: auto;
   border-collapse: collapse;
   display: block;
-  padding: 20px;
+  padding: 2rem 3rem 3rem;
+  box-shadow: 0px 2px 5px #12010122;
+  border-radius: 5px;
 
-  tr {
+  tbody tr {
     display: table-row;
-    padding: 10px;
-    border-bottom: 1px solid gainsboro;
+    border-top: 1px solid gainsboro;
   }
 
   .delete {
@@ -15,7 +16,6 @@ table {
 
     button {
       background: none;
-      border: none;
       font-weight: bold;
       font-stretch: expanded;
       font-size: 0.9rem;
@@ -29,12 +29,30 @@ table {
   @each $cell in $cells {
     $cell {
       text-align: left;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 1.5rem;
 
       &:nth-of-type(3),
       &:nth-of-type(8) {
         text-align: center;
       }
     }
+  }
+
+  .status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+    color: white;
+  }
+
+  .valide {
+    background-color: #5be881;
+  }
+  .rejected {
+    background-color: #ff0000;
+  }
+  .on-validation {
+    background-color: #fdb64d;
   }
 }

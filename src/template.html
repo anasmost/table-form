@@ -25,8 +25,8 @@
           <template>
             <tr>
               <td data-id></td>
-              <td></td>
-              <td></td>
+              <td class="date"></td>
+              <td><span class="status"></span></td>
               <td></td>
               <td></td>
               <td></td>
@@ -44,10 +44,10 @@
       </table>
       <menu type="toolbar">
         <li title="Ajouter un nouveau utilisateur">
-          <button>Ajouter utilisateur</button>
+          <button id="add-user">Ajouter utilisateur</button>
         </li>
         <li title="Réinitialiser les utilisateurs">
-          <button type="reset">Réinitialiser</button>
+          <button id="reset-table">Réinitialiser</button>
         </li>
       </menu>
     </main>
