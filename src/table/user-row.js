@@ -6,7 +6,7 @@ const STATUS = Object.freeze({
   "on-validation": "en validation",
 });
 
-const userTemplate = document.querySelector("#users > template");
+const userTemplate = document.querySelector("#users tbody template");
 const tableRow = userTemplate.content.firstElementChild;
 
 export function createRow(user) {

@@ -8,7 +8,7 @@
   </head>
   <body>
     <main>
-      <table aria-label="Table des utilisateurs" aria-colcount="8">
+      <table id="users" aria-label="Table des utilisateurs" aria-colcount="8">
         <thead>
           <tr>
             <th>ID</th>
@@ -21,7 +21,7 @@
             <th>Action</th>
           </tr>
         </thead>
-        <tbody id="users">
+        <tbody>
           <template>
             <tr>
               <td data-id></td>
@@ -51,9 +51,9 @@
         </li>
       </menu>
     </main>
-    <dialog>
+    <dialog open>
       <h1>Ajout d'utilisateurs</h1>
-      <form action="">
+      <form method="dialog" id="user-form">
         <div class="form-group">
           <label for="lastName">Nom</label>
           <input id="lastName" name="lastName" type="text" />
@@ -82,7 +82,7 @@
             type="text"
           />
         </div>
-        <input type="submit" value="Enrégistrer" />
+        <button type="submit">Enrégistrer</button>
       </form>
     </dialog>
   </body>
