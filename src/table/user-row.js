@@ -1,6 +1,6 @@
 import getKey from "../utils/object-key";
 
-import { STATUS } from "./user-model";
+import { USER_STATUS } from "./user-model";
 
 const userTemplate = document.querySelector("#users tbody template");
 const tableRow = userTemplate.content.firstElementChild;
@@ -9,12 +9,12 @@ export function createRow(user) {
   const tr = tableRow.cloneNode(true);
 
   // Apply user values to the corresponding row cells
-  Object.values(user).forEach((value, i) => {
+  [...user].forEach((value, i) => {
     const td = tr.children[i];
     // style status cells
     if (td.firstElementChild?.classList.contains("status")) {
       const span = td.firstElementChild;
-      const statusKey = getKey(STATUS, value);
+      const statusKey = getKey(USER_STATUS, value);
 
       span.classList.add(statusKey);
       span.textContent = value;

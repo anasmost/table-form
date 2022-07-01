@@ -1,3 +1,5 @@
+import { addIterator } from "../utils/object-key";
+
 const DEFAULT_USERS = Object.freeze([
   {
     id: "123456789",
@@ -28,7 +30,19 @@ const DEFAULT_USERS = Object.freeze([
   },
 ]);
 
+export const USER_STATUS = Object.freeze({
+  valide: "Validé",
+  rejected: "Rejeté",
+  "on-validation": "En validation",
+});
+
+const USER_STRUCTURE = Object.freeze(Object.keys(DEFAULT_USERS[0]));
+
 const users = JSON.parse(localStorage.getItem("users")) ?? [...DEFAULT_USERS];
+for (const user of users) {
+  addIterator(user, USER_STRUCTURE);
+}
+
 function storeUsers() {
   localStorage.setItem("users", JSON.stringify(users));
 }
@@ -36,30 +50,34 @@ function storeUsers() {
 export function getUsers() {
   return users;
 }
-export function addUser(user) {
+export function addUser(formUser) {
+  formUser.id = Math.floor(1000000000 * Math.random());
+  addIterator(formUser, USER_STRUCTURE);
+
+  const user = { ...formUser };
+
   users.push(user);
   storeUsers();
 
-  return users;
+  return user;
 }
 export function deleteUser(userID) {
   users.forEach((user, i) => {
-    if (user.id === userID) users.splice(i, 1);
+    if (user.id == userID) users.splice(i, 1);
   });
-  storeUsers;
+  storeUsers();
 
   return users;
 }
 export function resetUsers() {
   users.splice(0, Infinity);
   users.push(...DEFAULT_USERS);
+
+  for (const user of users) {
+    addIterator(user, USER_STRUCTURE);
+  }
+
   storeUsers();
 
   return users;
 }
-
-export const STATUS = Object.freeze({
-  valide: "Validé",
-  rejected: "Rejeté",
-  "on-validation": "En validation",
-});
