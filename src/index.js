@@ -1,10 +1,6 @@
 import { renderUsers, resetTable } from "./table";
 import "./styles.scss";
 
-for (const dialog of document.getElementsByTagName("dialog")) {
-  console.log(dialog);
-  dialog.close();
-}
 // Fill in the table with users
 renderUsers();
 // Optionally fix the table dimensions upon future modification
@@ -20,6 +16,8 @@ for (const row of table.rows) {
 document.getElementById("reset-table").addEventListener("click", resetTable);
 // Add user button
 document.getElementById("add-user").addEventListener("click", async (e) => {
-  const { showUserForm } = await import("./form-dialog");
+  const { showUserForm } = await import(
+    /* webpackPrefetch: true */ "./form-dialog"
+  );
   showUserForm();
 });
