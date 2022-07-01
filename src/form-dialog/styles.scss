@@ -1,3 +1,5 @@
+@import "../vars.scss";
+
 dialog {
   max-width: 1200px;
   width: 100%;
@@ -37,12 +39,31 @@ dialog {
       grid-column: 1/2;
     }
 
-    input {
+    input,
+    select {
       outline: none;
       border-radius: 5px;
       padding: 5px 8px;
       font-size: 1rem;
       border: 1px solid #c1c1c1;
+    }
+
+    option {
+      color: black;
+    }
+
+    #status {
+      background-color: transparent;
+
+      &.valide {
+        color: $valide;
+      }
+      &.rejected {
+        color: $rejected;
+      }
+      &.on-validation {
+        color: $on-validation;
+      }
     }
 
     button[type="submit"] {

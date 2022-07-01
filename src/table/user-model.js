@@ -57,3 +57,9 @@ export function resetUsers() {
 
   return users;
 }
+
+export const STATUS = Object.freeze({
+  valide: "Validé",
+  rejected: "Rejeté",
+  "on-validation": "En validation",
+});

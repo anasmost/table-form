@@ -1,10 +1,6 @@
 import getKey from "../utils/object-key";
 
-const STATUS = Object.freeze({
-  valide: "validé",
-  rejected: "rejeté",
-  "on-validation": "en validation",
-});
+import { STATUS } from "./user-model";
 
 const userTemplate = document.querySelector("#users tbody template");
 const tableRow = userTemplate.content.firstElementChild;
@@ -18,7 +14,7 @@ export function createRow(user) {
     // style status cells
     if (td.firstElementChild?.classList.contains("status")) {
       const span = td.firstElementChild;
-      const statusKey = getKey(STATUS, value.toLowerCase());
+      const statusKey = getKey(STATUS, value);
 
       span.classList.add(statusKey);
       span.textContent = value;

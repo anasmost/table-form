@@ -15,7 +15,7 @@ for (const row of table.rows) {
 // Reset button
 document.getElementById("reset-table").addEventListener("click", resetTable);
 // Add user button
-document.getElementById("add-user").addEventListener("click", async (e) => {
+document.getElementById("add-user").addEventListener("click", async () => {
   const { showUserForm } = await import(
     /* webpackPrefetch: true */ "./form-dialog"
   );
