@@ -39,7 +39,8 @@ module.exports = (env, { mode }) => {
     entry: "./src/index.js",
     output: {
       filename: "[name].[id].js",
-      path: path.resolve(__dirname, "./dist"),
+      chunkFilename: "[name].chunk.js",
+      path: path.resolve(__dirname, "./docs"),
       publicPath: "/",
       clean: true,
     },
@@ -67,6 +68,12 @@ module.exports = (env, { mode }) => {
       }
     : {
         ...config,
-        plugins: [...config.plugins, new MiniCssExtractPlugin()],
+        plugins: [
+          ...config.plugins,
+          new MiniCssExtractPlugin({
+            filename: "[name].[id].css",
+            chunkFilename: "[name].chunk.css",
+          }),
+        ],
       };
 };
