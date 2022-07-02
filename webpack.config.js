@@ -41,7 +41,8 @@ module.exports = (env, { mode }) => {
       filename: "[name].[id].js",
       chunkFilename: "[name].chunk.js",
       path: path.resolve(__dirname, "./docs"),
-      publicPath: "/",
+      publicPath:
+        mode === "development" ? "/" : "https://anasmost.github.io/table-form/",
       clean: true,
     },
     module: {
