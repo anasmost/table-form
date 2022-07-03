@@ -86,7 +86,6 @@ button:hover {
 main {
   max-width: 1200px;
   width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   margin: auto;
 
