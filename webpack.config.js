@@ -61,6 +61,7 @@ module.exports = (env, { mode }) => {
         template: "src/template.html",
       }),
     ],
+    target: ["web", "es5"],
   };
 
   return mode === "development"
